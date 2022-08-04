@@ -6,3 +6,7 @@ $ npm install
 ```
 $ npm start
 ```
+### Instalando biblioteca para trabalhar com rotas
+```
+$ npm i react-router-dom
+```
