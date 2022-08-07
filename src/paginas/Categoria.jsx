@@ -20,7 +20,7 @@ const Categoria = () => {
     return(
         <>
         <div className="container">
-            <h2 className="titulo-pagina">Pet Notícias</h2>
+            <h2 className="titulo-pagina"></h2>
         </div>
         <ListaCategorias/>
         <ul className="lista-categorias container flex">

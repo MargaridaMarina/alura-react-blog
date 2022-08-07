@@ -12,12 +12,12 @@
     padding: 1rem;
 }
 
-.lista-categorias__categoria--bem-estar {
+.lista-categorias__categoria--Bem-estar {
     color: var(--cor-contraste-claro);
     background-color: var(--cor-categoria-bem-estar);
 }
 
-.lista-categorias__categoria--comportamento {
+.lista-categorias__categoria--Comportamento {
     color: var(--cor-contraste-claro);
     background-color: var(--cor-categoria-comportamento);
 }

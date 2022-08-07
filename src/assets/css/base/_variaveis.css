@@ -1,7 +1,7 @@
 :root {
-    --fonte-familia-corpo: 'Montserrat', sans-serif;
-    --fonte-familia-logo: 'Pacifico', cursive;
-    --fonte-familia-titulo-pagina: 'Pacifico', cursive;
+    --fonte-familia-corpo: 'Open Sans';
+    --fonte-familia-logo: 'Quicksand';
+    --fonte-familia-titulo-pagina: 'Quicksand';
 
     --fonte-peso-input: 300;
     --fonte-peso-cartao: 500;
@@ -19,16 +19,16 @@
     --fonte-tamanho-menu-cabecalho-item: 1.2rem;
     --fonte-tamanho-naoencontrado-texto: 1.25rem;
 
-    --cor-primaria: #0071ea;
-    --cor-secundaria: #d6eaff;
+    --cor-primaria: #88e2e9;
+    --cor-secundaria: #f8fffe;
     --cor-contraste-escuro: #4D4D4D;
-    --cor-contraste-claro: #fff;
+    --cor-contraste-claro: rgb(255, 255, 255);
     --cor-divisao: #dadada;
-    --cor-aviso: #df2525;
+    --cor-aviso: #7bcfb6;
     --cor-sucesso: #46bb42;
 
-    --cor-categoria-bem-estar: #ff4949;
-    --cor-categoria-comportamento: #368dff;
+    --cor-categoria-bem-estar: #7bcfb6;
+    --cor-categoria-comportamento: #88e2e9;
 
     --sombra: 0 5px 10px #55a6ff38;
 }

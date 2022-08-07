@@ -40,11 +40,11 @@
     line-height: 1.3rem;
 }
 
-.cartao-post--bem-estar {
+.cartao-post--Bem-estar {
     border-color: var(--cor-categoria-bem-estar);
 }
 
-.cartao-post--comportamento {
+.cartao-post--Comportamento {
     border-color: var(--cor-categoria-comportamento);
 }
 
