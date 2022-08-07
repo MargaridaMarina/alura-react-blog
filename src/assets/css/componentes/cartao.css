@@ -40,12 +40,12 @@
     line-height: 1.3rem;
 }
 
-.cartao-post--Bem-estar {
-    border-color: var(--cor-categoria-bem-estar);
+.cartao-post--Sustentabilidade {
+    border-color: var(--cor-categoria-sustentabilidade);
 }
 
-.cartao-post--Comportamento {
-    border-color: var(--cor-categoria-comportamento);
+.cartao-post--Tecnologia {
+    border-color: var(--cor-categoria-tecnologia);
 }
 
 .posts {
