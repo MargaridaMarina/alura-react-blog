@@ -20,15 +20,15 @@
     --fonte-tamanho-naoencontrado-texto: 1.25rem;
 
     --cor-primaria: #88e2e9;
-    --cor-secundaria: #f8fffe;
+    --cor-secundaria: #FCF8E8;
     --cor-contraste-escuro: #4D4D4D;
     --cor-contraste-claro: rgb(255, 255, 255);
     --cor-divisao: #dadada;
     --cor-aviso: #7bcfb6;
     --cor-sucesso: #46bb42;
 
-    --cor-categoria-bem-estar: #7bcfb6;
-    --cor-categoria-comportamento: #88e2e9;
+    --cor-categoria-bem-estar: #CEE5D0;
+    --cor-categoria-comportamento: #94B49F;
 
     --sombra: 0 5px 10px #55a6ff38;
 }
