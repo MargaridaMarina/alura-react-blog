@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {busca} from '../api/api'
 
-const ListaPost = ({url}) => {
+const ListaPost = () => {
 
 const [posts, setPosts] = useState([])
 
 useEffect(()=>{
-  busca(url, setPosts)
-}, [url])
+  busca(`/posts`, setPosts)
+}, [])
+console.log({posts})
 
   return(
     <section className="posts container">
