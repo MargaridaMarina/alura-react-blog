@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import './Formulario.css'
+import http from '../../api/api'
 
 const Formulario = (props) => {
 
@@ -9,50 +10,64 @@ const Formulario = (props) => {
     const [descricao, setDescricao] = useState('')
     const [imagem, setImagem] = useState('')
     const [markdown, setMarkdown] = useState('')
+    const [categoria, setCategoria] = useState('')
 
-    const aoSalvar = (evento) => {
-        evento.preventDefault()
-        props.aoPostCadastrado({
-            titulo,
-            descricao,
-            imagem,
-            markdown
+    const criarPost = () => {
+        http.post('posts', {
+            title: titulo,
+            metadescription: descricao,
+            image: imagem,
+            markdown: markdown, 
+            category: categoria
         })
-        setTitulo('')
-        setDescricao('')
-        setImagem('')
-        setMarkdown('')
+        .then(res => console.log(res))
+    }
+
+    const aoSubmeterForm = (evento) => {
+        evento.preventDefault()
     }
 
     return (
         <section className="formulario">
-            <form onSubmit={aoSalvar}>
+            <form onSubmit={aoSubmeterForm}>
                 {/* <h2>Preencha os dados para criar o card do colaborador</h2> */}
                 <CampoTexto 
                     obrigatorio={true} 
-                    label="Titulo" 
-                    placeholder="Digite o título do artigo"
+                    label="Título" 
+                    placeholder="Digite o título do post"
                     valor={titulo}
-                    aoAlterado={valor => setTitulo(valor)} 
+                    onChange={valor => setTitulo(valor)} 
                 />
                 <CampoTexto 
                     obrigatorio={true} 
-                    label="Descricao" 
-                    placeholder="Digite uma breve descrição do artigo" 
+                    label="Descrição" 
+                    placeholder="Digite uma breve descrição do post" 
                     valor={descricao}
-                    aoAlterado={valor => setDescricao(valor)}
+                    onChange={valor => setDescricao(valor)}
                 />
                 <CampoTexto 
+                    obrigatorio={true} 
+                    label="Categoria" 
+                    placeholder="Digite aqui a categoria do post" 
+                    valor={categoria}
+                    onChange={valor => setCategoria(valor)}
+                />
+                {/* <CampoTexto 
                     label="Imagem" 
                     placeholder="Digite o endereço da imagem"
                     valor={imagem}
-                    aoAlterado={valor => setImagem(valor)} 
+                    onChange={selecionarArquivo} 
+                /> */}
+                <CampoTexto 
+                    obrigatorio={true} 
+                    label="Texto" 
+                    placeholder="Digite o texto do post" 
+                    valor={markdown}
+                    onChange={valor => setMarkdown(valor)}
                 />
-                <Botao 
-                    texto="Cancel"
-                />
-                <Botao 
-                    texto="Save"
+                <Botao
+                    text="Criar"
+                    onClick={criarPost}
                 />
             </form>
         </section>

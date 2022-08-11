@@ -7,6 +7,7 @@ import Pagina404 from './paginas/Pagina404'
 import Cabecalho from './components/Cabecalho'
 import Post from './paginas/Post'
 import Categoria from './paginas/Categoria'
+import Formulario from './components/Formulario'
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path='/posts/:id'>
           <Post/>
+        </Route>
+        <Route path='/novopost'>
+          <Formulario/>
         </Route>
         <Route>
           <Pagina404/>
