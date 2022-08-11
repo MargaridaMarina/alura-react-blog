@@ -48,6 +48,10 @@
     border-color: var(--cor-categoria-tecnologia);
 }
 
+.cartao-post--Livros {
+    border-color: var(--cor-categoria-livros);
+}
+
 .posts {
     display: flex;
     flex-direction: column;

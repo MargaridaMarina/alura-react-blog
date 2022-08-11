@@ -19,7 +19,7 @@
     --fonte-tamanho-menu-cabecalho-item: 1.2rem;
     --fonte-tamanho-naoencontrado-texto: 1.25rem;
 
-    --cor-primaria: #88e2e9;
+    --cor-primaria: #a0dadf;
     --cor-secundaria: #FCF8E8;
     --cor-contraste-escuro: #4D4D4D;
     --cor-contraste-claro: rgb(255, 255, 255);
@@ -29,6 +29,7 @@
 
     --cor-categoria-sustentabilidade: #CEE5D0;
     --cor-categoria-tecnologia: #94B49F;
+    --cor-categoria-livros: #a0dadf;
 
     --sombra: 0 5px 10px #55a6ff38;
 }
