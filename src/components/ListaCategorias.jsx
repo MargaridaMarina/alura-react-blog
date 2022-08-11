@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { busca } from "../api/api";
+import http from "../api/api";
 import '../assets/css/blog.css'
 
 const ListaCategorias = () => {
@@ -8,9 +8,10 @@ const ListaCategorias = () => {
   const [categorias, setCategorias] = useState([])
   
   useEffect(()=>{
-    busca(`/categorias`, setCategorias)
+    http.get(`/categorias`)
+    .then(res => setCategorias(res.data))
   }, [])
-  console.log({categorias})
+
   return(
     <ul className="lista-categorias container flex">
       {
