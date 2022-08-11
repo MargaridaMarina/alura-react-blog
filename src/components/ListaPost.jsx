@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {busca} from '../api/api'
+import http from "../api/api";
+
 
 const ListaPost = () => {
 
-const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([])
 
-useEffect(()=>{
-  busca(`/posts`, setPosts)
-}, [])
-console.log({posts})
+  useEffect(()=>{
+    http.get(`/posts`)
+    .then(res => setPosts(res.data))
+  }, [])
 
   return(
     <section className="posts container">
       {posts.map((post)=>(
-        <Link className={`cartao-post cartao-post--${post.categoria}`}  to={`/posts/${post.id}`}>
-          <article key={post.id}>
+        <Link className={`cartao-post cartao-post--${post.category}`}  to={`/posts/${post._id}`} key={post.id}>
+          <article >
             <h3 className="cartao-post__titulo">
               {post.title}
             </h3>
