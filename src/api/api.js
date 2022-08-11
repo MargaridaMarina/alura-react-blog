@@ -1,13 +1,15 @@
 import axios from 'axios'
 
-export const api = axios.create({
-  baseURL: 'http://localhost:4000'
+const http = axios.create({
+  baseURL: 'http://localhost:4001'
 })
 
-export const busca = async(url, setDado) => {
-  console.log(url)
-  const resposta = await api.get(url)
+export default http
 
-  console.log({resposta})
-  setDado(resposta.data)
-}
+// export const busca = async(url, setDado) => {
+//   console.log(url)
+//   const resposta = await api.get(url)
+
+//   console.log({resposta})
+//   setDado(resposta.data)
+// }
