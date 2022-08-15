@@ -47,7 +47,7 @@
     height: 100vh;
 }
 
-.menu-cabecalho {
+/* .menu-cabecalho {
     position: fixed;
     left: -100vw;
     top: 0;
@@ -59,7 +59,7 @@
     font-weight: var(--fonte-peso-menu-cabecalho-item);
     z-index: 10;
     transition: .25s;
-}
+} */
 
 .menu-cabecalho__fechar {
     position: absolute;
@@ -82,16 +82,15 @@
 
 .menu-item {
     display: block;
-    padding-top: 1.5rem;
-    padding-left: 1rem;
-    padding-bottom: 1.5rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--cor-divisao);
+    border-radius: 2rem;
+    text-align: center;
+    background-color: var(--cor-primaria);
+    color: var(--cor-contraste-claro);
 }
 
 .menu-item--entrar {
-    background-color: var(--cor-primaria);
-    color: var(--cor-contraste-claro);
-    border: none;
 }
 
 .menu-cabecalho--ativo {
@@ -146,7 +145,6 @@
     }
 
     .menu-item--entrar {
-        border-radius: 2rem;
         padding: 1rem 1.5rem;
     }
 }
