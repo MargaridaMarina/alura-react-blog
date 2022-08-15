@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { busca } from "../api/api";
+import http from "../api/api";
 import '../assets/css/post.css'
-import { useHistory, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import Botao from '../components/Botao'
 
 const Post = () => {
-  let history = useHistory()
 
   const { id } = useParams()
- 
   const[post, setPost] = useState({})
 
-  useEffect(()=>{
-    busca(`/posts/${id}`, setPost)
-    .catch(()=>{
-      history.push('/404')
-    })
+  useEffect(() => {
+    async function buscarDados() {
+      const res = await http.get(`/posts/${id}`)
+      const data = await res.data
+      console.log({data})
+      setPost(data)
+    }
+    buscarDados();
   },[id])
 
   return (
@@ -23,9 +25,15 @@ const Post = () => {
         <h2 className="cartao__titulo">
           {post.title}
         </h2>
-        <p className="cartao__texto">
-          {post.body}
+        <p className="cartao__descricao">
+          {post.metadescription}
         </p>
+        <p className="cartao__texto">
+          {post.markdown}
+        </p>
+        <Botao>
+          <Link to="#">Editar</Link>
+        </Botao>
       </article>
     </main>
   )
