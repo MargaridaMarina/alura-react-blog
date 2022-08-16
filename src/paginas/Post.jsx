@@ -19,6 +19,11 @@ const Post = () => {
     buscarDados();
   },[id])
 
+  if (Object.keys(post).length === 0){
+    // TODO: fix empty state
+    return "carregando"
+  }
+
   return (
     <main className="container flex flex--centro">
       <article className="cartao post">
@@ -32,7 +37,7 @@ const Post = () => {
           {post.markdown}
         </p>
         <Botao>
-          <Link to="#">Editar</Link>
+          <Link to={`/editarpost/${id}`}>Editar</Link>
         </Botao>
       </article>
     </main>

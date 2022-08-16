@@ -1,46 +1,75 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import './Formulario.css'
 import http from '../../api/api'
-import { Link } from 'react-router-dom'
+import { useParams, Link } from "react-router-dom";
 
-const Formulario = props => {
 
+const Formulario = ({ isNew }) => {
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
-  // const [imagem, setImagem] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
 
-  const criarPost = () => {
-    http
-      .post('posts', {
+  const { id } = useParams()
+
+  useEffect(() => {
+    async function buscarDados() {
+      const res = await http.get(`/posts/${id}`)
+      const data = await res.data
+
+      setTitulo(data.title)
+      setDescricao(data.metadescription)
+      setMarkdown(data.markdown)
+      setCategoria(data.category)
+    }
+    buscarDados();
+  }, [id])
+
+  const httpRequestMethod = (method, url) => {
+    return method(url, {
         title: titulo,
         metadescription: descricao,
-        // image: imagem,
         markdown: markdown,
         category: categoria
       })
-      .then(res => console.log(res))
   }
 
-  const aoSubmeterForm = (evento) => {
-    evento.preventDefault()
+  const criarPost = () => {
+    httpRequestMethod(http.post, "posts").then(x => {
+      window.history.back(); 
+    })
   }
 
-  // const selecionarArquivo = (evento) => {
-  //     if (evento.target.files?.length) {
-  //       setImagem(evento.target.files[0])
-  //     } else {
-  //       setImagem(null)
-  //     }
-  //   }
+  const editarPost = (ev)=> {
+    httpRequestMethod(http.put, `posts/${id}`).then( () => {
+      window.location.pathname = `posts/${id}`;
+    })
+  }
+
+  
+  const renderActionButtons = () => (
+    isNew
+    ? ( 
+      <Botao onClick={criarPost}>
+        Criar
+      </Botao>
+    ) : (
+      <div>
+        <Botao onClick={editarPost}> editar </Botao>
+
+        <Link to={`/posts/${id}`}>
+          <Botao> Cancelar </Botao>
+        </Link>
+      </div>
+    )
+  )
+
 
   return (
     <section className="formulario">
-      <form onSubmit={aoSubmeterForm}>
-        {/* <h2>Preencha para criar o post</h2> */}
+      <form onSubmit={(ev) => ev.preventDefault()}>
         <CampoTexto
           obrigatorio={true}
           label="Título"
@@ -62,12 +91,6 @@ const Formulario = props => {
           valor={categoria}
           onChange={valor => setCategoria(valor)}
         />
-        {/* <CampoTexto 
-                    label="Imagem" 
-                    placeholder="Digite o endereço da imagem"
-                    valor={imagem}
-                    onChange={selecionarArquivo} 
-                /> */}
         <CampoTexto
           obrigatorio={true}
           label="Texto"
@@ -75,9 +98,7 @@ const Formulario = props => {
           valor={markdown}
           onChange={valor => setMarkdown(valor)}
         />
-        <Botao onClick={criarPost}>
-          <Link to="/">Criar</Link>
-        </Botao>
+        { renderActionButtons() }
       </form>
     </section>
   )

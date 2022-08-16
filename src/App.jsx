@@ -29,6 +29,9 @@ function App() {
           <Post/>
         </Route>
         <Route path='/novopost'>
+          <Formulario isNew/>
+        </Route>
+        <Route path='/editarpost/:id'>
           <Formulario/>
         </Route>
         <Route>
