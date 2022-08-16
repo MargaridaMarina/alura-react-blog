@@ -7,38 +7,71 @@ import Botao from '../components/Botao'
 const Post = () => {
 
   const { id } = useParams()
-  const[post, setPost] = useState({})
+
+  const [titulo, setTitulo] = useState('')
+  const [descricao, setDescricao] = useState('')
+  const [markdown, setMarkdown] = useState('')
+  const [categoria, setCategoria] = useState('')
 
   useEffect(() => {
     async function buscarDados() {
       const res = await http.get(`/posts/${id}`)
       const data = await res.data
-      console.log({data})
-      setPost(data)
+
+      setTitulo(data.title)
+      setDescricao(data.metadescription)
+      setMarkdown(data.markdown)
+      setCategoria(data.category)
     }
     buscarDados();
-  },[id])
+  }, [id])
 
-  if (Object.keys(post).length === 0){
+  if (Object.keys({titulo, categoria, markdown, descricao}).length === 0){
     // TODO: fix empty state
     return "carregando"
   }
 
+  const httpRequestMethod = (method, url) => {
+    return method(url, {
+        title: titulo,
+        metadescription: descricao,
+        markdown: markdown,
+        category: categoria
+      })
+  }
+
+  const deletarPost = (ev)=> {
+    httpRequestMethod(http.delete, `posts/${id}`).then( () => {
+      window.location.pathname = `/`;
+    })
+  }
+  
+  const renderActionButtons = () => (
+    <div>
+      <Botao>
+        <Link to={`/editarpost/${id}`}>Editar</Link>
+      </Botao>
+      <Botao onClick={deletarPost}> Deletar </Botao>
+    </div>
+  )
+
+
   return (
     <main className="container flex flex--centro">
-      <article className="cartao post">
+      <article className={`cartao-post cartao-post--${categoria}`}>
+        <p className="cartao__categoria">
+          {categoria}
+        </p>
         <h2 className="cartao__titulo">
-          {post.title}
+          {titulo}
         </h2>
         <p className="cartao__descricao">
-          {post.metadescription}
+          {descricao}
         </p>
         <p className="cartao__texto">
-          {post.markdown}
+          {markdown}
         </p>
-        <Botao>
-          <Link to={`/editarpost/${id}`}>Editar</Link>
-        </Botao>
+        {renderActionButtons()}
       </article>
     </main>
   )
