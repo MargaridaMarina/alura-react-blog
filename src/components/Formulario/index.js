@@ -27,39 +27,37 @@ const Formulario = ({ isNew }) => {
     buscarDados();
   }, [id])
 
+  const httpRequestMethod = (method, url) => {
+    return method(url, {
+        title: titulo,
+        metadescription: descricao,
+        markdown: markdown,
+        category: categoria
+      })
+  }
+
   const criarPost = () => {
-    http
-      .post('posts', {
-        title: titulo,
-        metadescription: descricao,
-        markdown: markdown,
-        category: categoria
-      })
-      .then(res => console.info(res))
+    httpRequestMethod(http.post, "posts").then(x => {
+      window.history.back(); 
+    })
   }
 
-  const salvarPost = ()=> {
-    http
-      .put(`posts/${id}`, {
-        title: titulo,
-        metadescription: descricao,
-        markdown: markdown,
-        category: categoria
-      })
-      .then(res => console.info(res))
+  const editarPost = (ev)=> {
+    httpRequestMethod(http.put, `posts/${id}`).then( () => {
+      window.location.pathname = `posts/${id}`;
+    })
   }
 
+  
   const renderActionButtons = () => (
     isNew
     ? ( 
       <Botao onClick={criarPost}>
-        <Link to="/">Criar</Link>
+        Criar
       </Botao>
     ) : (
       <div>
-        <Link onClick={salvarPost} to={`/posts/${id}`} key={Math.random()}>
-          <Botao> Salvar </Botao>
-        </Link>
+        <Botao onClick={editarPost}> editar </Botao>
 
         <Link to={`/posts/${id}`}>
           <Botao> Cancelar </Botao>
