@@ -32,7 +32,7 @@ const Post = () => {
           {post.markdown}
         </p>
         <Botao>
-          <Link to="#">Editar</Link>
+          <Link to={`/editarpost/${id}`}>Editar</Link>
         </Botao>
       </article>
     </main>
