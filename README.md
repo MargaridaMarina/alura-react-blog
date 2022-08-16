@@ -10,7 +10,3 @@ $ npm start
 ```
 $ npm i react-router-dom
 ```
-### Subindo servidor
-```
-$ npx json-server --watch db.json --port 5001
-```
