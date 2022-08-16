@@ -7,12 +7,12 @@ import { useParams, Link } from "react-router-dom";
 
 
 const Formulario = ({ isNew }) => {
+  const { id } = useParams()
+
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
-
-  const { id } = useParams()
 
   useEffect(() => {
     async function buscarDados() {
@@ -47,7 +47,6 @@ const Formulario = ({ isNew }) => {
       window.location.pathname = `posts/${id}`;
     })
   }
-
   
   const renderActionButtons = () => (
     isNew
@@ -65,7 +64,6 @@ const Formulario = ({ isNew }) => {
       </div>
     )
   )
-
 
   return (
     <section className="formulario">
@@ -98,7 +96,7 @@ const Formulario = ({ isNew }) => {
           valor={markdown}
           onChange={valor => setMarkdown(valor)}
         />
-        { renderActionButtons() }
+        {renderActionButtons()}
       </form>
     </section>
   )
