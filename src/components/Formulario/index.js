@@ -42,7 +42,7 @@ const Formulario = ({ isNew }) => {
     })
   }
 
-  const editarPost = (ev)=> {
+  const salvarPost = (ev)=> {
     httpRequestMethod(http.put, `posts/${id}`).then( () => {
       window.location.pathname = `posts/${id}`;
     })
@@ -56,7 +56,7 @@ const Formulario = ({ isNew }) => {
       </Botao>
     ) : (
       <div>
-        <Botao onClick={editarPost}> editar </Botao>
+        <Botao onClick={salvarPost}> Salvar </Botao>
 
         <Link to={`/posts/${id}`}>
           <Botao> Cancelar </Botao>

@@ -3,13 +3,14 @@
   border-radius: 5px;
   font-weight: 700;
   font-size: 18px;
-  padding: 20px;
+  padding: 15px;
   width: 100px;
   border: none;
   cursor: pointer;
   color: #FFF;
   margin: 16px 4px;
-  margin-left: 300px;
+  text-align: center;
+  /* margin-left: 300px; */
 }
 
 .botao:hover {
