@@ -32,7 +32,7 @@ function App() {
           <Formulario isNew/>
         </Route>
         <Route path='/editarpost/:id'>
-          <Formulario isUpdate/>
+          <Formulario/>
         </Route>
         <Route>
           <Pagina404/>

@@ -6,7 +6,7 @@ import http from '../../api/api'
 import { useParams, Link } from "react-router-dom";
 
 
-const Formulario = ({ isNew, isUpdate }) => {
+const Formulario = ({ isNew }) => {
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
   const [markdown, setMarkdown] = useState('')
@@ -49,16 +49,13 @@ const Formulario = ({ isNew, isUpdate }) => {
       .then(res => console.info(res))
   }
 
-  const renderActionButtons = () => {
-    if (isNew) {
-      return (
-        <Botao onClick={criarPost}>
-          <Link to="/">Criar</Link>
-        </Botao>
-      )
-    }
-
-    return (
+  const renderActionButtons = () => (
+    isNew
+    ? ( 
+      <Botao onClick={criarPost}>
+        <Link to="/">Criar</Link>
+      </Botao>
+    ) : (
       <div>
         <Link onClick={salvarPost} to={`/posts/${id}`} key={Math.random()}>
           <Botao> Salvar </Botao>
@@ -69,8 +66,7 @@ const Formulario = ({ isNew, isUpdate }) => {
         </Link>
       </div>
     )
-
-  }
+  )
 
 
   return (
