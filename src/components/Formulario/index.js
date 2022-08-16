@@ -12,17 +12,20 @@ const Formulario = ({ isNew, isUpdate }) => {
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
 
-  const[post, setPost] = useState({})
-
   const { id } = useParams()
+
   useEffect(() => {
     async function buscarDados() {
       const res = await http.get(`/posts/${id}`)
       const data = await res.data
-      setPost(data)
+
+      setTitulo(data.title)
+      setDescricao(data.metadescription)
+      setMarkdown(data.markdown)
+      setCategoria(data.category)
     }
     buscarDados();
-  },[])
+  }, [id])
 
   const criarPost = () => {
     http
@@ -32,7 +35,7 @@ const Formulario = ({ isNew, isUpdate }) => {
         markdown: markdown,
         category: categoria
       })
-      .then(res => console.log(res))
+      .then(res => console.info(res))
   }
 
   const salvarPost = ()=> {
@@ -43,7 +46,7 @@ const Formulario = ({ isNew, isUpdate }) => {
         markdown: markdown,
         category: categoria
       })
-      .then(res => console.log(res))
+      .then(res => console.info(res))
   }
 
   const renderActionButtons = () => {
@@ -57,14 +60,13 @@ const Formulario = ({ isNew, isUpdate }) => {
 
     return (
       <div>
-        <Botao onClick={salvarPost}>
-          Salvar
-        </Botao>
-        <Botao>
-          <Link to={`/posts/${id}`}>
-            Cancelar
-          </Link>
-        </Botao>
+        <Link onClick={salvarPost} to={`/posts/${id}`} key={Math.random()}>
+          <Botao> Salvar </Botao>
+        </Link>
+
+        <Link to={`/posts/${id}`}>
+          <Botao> Cancelar </Botao>
+        </Link>
       </div>
     )
 
@@ -78,14 +80,14 @@ const Formulario = ({ isNew, isUpdate }) => {
           obrigatorio={true}
           label="Título"
           placeholder="Digite o título do post"
-          valor={post.title}
+          valor={titulo}
           onChange={valor => setTitulo(valor)}
         />
         <CampoTexto
           obrigatorio={true}
           label="Descrição"
           placeholder="Digite uma breve descrição do post"
-          valor={post.metadescription}
+          valor={descricao}
           onChange={valor => setDescricao(valor)}
         />
         <CampoTexto
@@ -99,7 +101,7 @@ const Formulario = ({ isNew, isUpdate }) => {
           obrigatorio={true}
           label="Texto"
           placeholder="Digite o texto do post"
-          valor={post.markdown}
+          valor={markdown}
           onChange={valor => setMarkdown(valor)}
         />
         { renderActionButtons() }
