@@ -29,7 +29,10 @@ function App() {
           <Post/>
         </Route>
         <Route path='/novopost'>
-          <Formulario/>
+          <Formulario isNew/>
+        </Route>
+        <Route path='/editarpost/:id'>
+          <Formulario isUpdate/>
         </Route>
         <Route>
           <Pagina404/>
