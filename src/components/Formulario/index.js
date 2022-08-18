@@ -37,8 +37,8 @@ const Formulario = ({ isNew }) => {
   }
 
   const criarPost = () => {
-    httpRequestMethod(http.post, "posts").then(x => {
-      window.history.back(); 
+    httpRequestMethod(http.post, "posts").then( () => {
+      window.location.pathname = "/";
     })
   }
 
