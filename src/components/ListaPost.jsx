@@ -15,7 +15,7 @@ const ListaPost = () => {
   return(
     <section className="posts container">
       {posts.map((post)=>(
-        <Link className={`cartao-post cartao-post--${post.category}`}  to={`/posts/${post._id}`} key={post.id}>
+        <Link className={`cartao-posts cartao-post--${post.category}`}  to={`/posts/${post._id}`} key={post.id}>
           <article >
             <h3 className="cartao-post__titulo">
               {post.title}

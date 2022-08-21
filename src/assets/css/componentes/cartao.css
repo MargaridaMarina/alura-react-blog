@@ -11,7 +11,7 @@
 
 .cartao__categoria {
     font-size: var(--fonte-tamanho-cartao-categoria);
-    margin-bottom: 1rem;
+    margin-top: 1.25rem;
 }
 
 .cartao__titulo {
@@ -28,17 +28,31 @@
     line-height: 1.2rem;
 }
 
-.cartao-post {
+.cartao-posts {
     background-color: var(--cor-contraste-claro);
     border-radius: 10px;
     box-shadow: var(--sombra);
-    width: 100%;
+    width: 600px;
     max-width: 25rem;
     padding: 1rem 2rem 2rem;
     box-sizing: border-box;
     margin-top: 2.25rem;
     margin-bottom: 2.25rem;
-    border-top: 1rem solid;
+    border-top: 1.25rem solid;
+}
+
+
+.cartao-post {
+    background-color: var(--cor-contraste-claro);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    width: 600px;
+    max-width: 45rem;
+    padding: 1rem 2rem 2rem;
+    box-sizing: border-box;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+    border-top: 1.25rem solid;
 }
 
 .cartao-post__titulo {
@@ -61,6 +75,10 @@
 
 .cartao-post--Livros {
     border-color: var(--cor-categoria-livros);
+}
+
+.cartao-post--Zen {
+    border-color: var(--cor-categoria-zen);
 }
 
 .posts {
