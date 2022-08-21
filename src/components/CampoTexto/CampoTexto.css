@@ -8,12 +8,20 @@
   font-size: 20px;
 }
 
-.campo-texto input {
+.campo-texto textarea  {
   background-color: #FFF;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
-  width: 400px;
+  width: 600px;
   border: none;
   font-size: 18px;
   padding: 24px;
   box-sizing: border-box;
+ font-family: var(--fonte-familia-corpo);
+} 
+
+.markdown {
+ height: 600px;
+ resize: both !important;
+ overflow: auto !important;
+ font-family: var(--fonte-familia-corpo);
 }

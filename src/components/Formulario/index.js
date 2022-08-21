@@ -90,6 +90,7 @@ const Formulario = ({ isNew }) => {
           onChange={valor => setCategoria(valor)}
         />
         <CampoTexto
+          classe="markdown"
           obrigatorio={true}
           label="Texto"
           placeholder="Digite o texto do post"
