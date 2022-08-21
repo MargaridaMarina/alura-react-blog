@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import http from "../api/api";
 import '../assets/css/post.css'
 import { useParams, Link } from "react-router-dom";
-import Botao from '../components/Botao'
+import Botao from '../components/Botao';
+import ReactDOM from 'react-dom'
+import ReactMarkdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
 
 const Post = () => {
 
@@ -55,22 +58,24 @@ const Post = () => {
     </div>
   )
 
+  const renderMarkdown = () => {
+    return (
+      <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{markdown}</ReactMarkdown>
+    )
+  }
 
   return (
     <main className="container flex flex--centro">
       <article className={`cartao-post cartao-post--${categoria}`}>
-        <p className="cartao__categoria">
-          {categoria}
-        </p>
         <h2 className="cartao__titulo">
           {titulo}
         </h2>
         <p className="cartao__descricao">
           {descricao}
         </p>
-        <p className="cartao__texto">
-          {markdown}
-        </p>
+        <div>
+          {renderMarkdown()}
+        </div>
         {renderActionButtons()}
       </article>
     </main>
