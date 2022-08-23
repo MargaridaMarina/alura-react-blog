@@ -13,6 +13,7 @@ const Formulario = ({ isNew }) => {
   const [descricao, setDescricao] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
+  const [imagem, setImagem] = useState('')
 
   useEffect(() => {
     async function buscarDados() {
@@ -23,6 +24,7 @@ const Formulario = ({ isNew }) => {
       setDescricao(data.metadescription)
       setMarkdown(data.markdown)
       setCategoria(data.category)
+      setImagem(data.image)
     }
     buscarDados();
   }, [id])
@@ -32,7 +34,8 @@ const Formulario = ({ isNew }) => {
         title: titulo,
         metadescription: descricao,
         markdown: markdown,
-        category: categoria
+        category: categoria,
+        image: imagem
       })
   }
 
@@ -75,6 +78,12 @@ const Formulario = ({ isNew }) => {
           valor={titulo}
           onChange={valor => setTitulo(valor)}
         />
+        <CampoTexto
+          label="Imagem"
+          placeholder="Digite a url da imagem"
+          valor={imagem}
+          onChange={valor => setImagem(valor)}
+        />        
         <CampoTexto
           obrigatorio={true}
           label="Descrição"

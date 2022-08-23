@@ -24,6 +24,11 @@
     margin-bottom: 1rem;
 }
 
+.cartao__imagem {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
 .cartao__texto {
     line-height: 1.2rem;
 }
@@ -63,6 +68,11 @@
 
 .cartao-post__meta {
     line-height: 1.3rem;
+}
+
+.cartao-post__image {
+    margin-top: 20px;
+    width: 100%;
 }
 
 .cartao-post--Sustentabilidade {

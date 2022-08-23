@@ -23,6 +23,7 @@ const ListaPost = () => {
             <p className="cartao-post__meta">
               {post.metadescription}
             </p>
+            <img className="cartao-post__image" src={post.image} alt={post.metadescription}/>
           </article>
         </Link>
       ))}

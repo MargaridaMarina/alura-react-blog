@@ -3,7 +3,6 @@ import http from "../api/api";
 import '../assets/css/post.css'
 import { useParams, Link } from "react-router-dom";
 import Botao from '../components/Botao';
-import ReactDOM from 'react-dom'
 import ReactMarkdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 
@@ -15,6 +14,7 @@ const Post = () => {
   const [descricao, setDescricao] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
+  const [imagem, setImagem] = useState('')
 
   useEffect(() => {
     async function buscarDados() {
@@ -25,6 +25,7 @@ const Post = () => {
       setDescricao(data.metadescription)
       setMarkdown(data.markdown)
       setCategoria(data.category)
+      setImagem(data.image)
     }
     buscarDados();
   }, [id])
@@ -39,7 +40,8 @@ const Post = () => {
         title: titulo,
         metadescription: descricao,
         markdown: markdown,
-        category: categoria
+        category: categoria,
+        image: imagem
       })
   }
 
@@ -73,6 +75,7 @@ const Post = () => {
         <p className="cartao__descricao">
           {descricao}
         </p>
+        <img className="cartao__imagem" src={imagem} alt={descricao}/>
         <div>
           {renderMarkdown()}
         </div>
