@@ -12,13 +12,23 @@
     padding: 1rem;
 }
 
-.lista-categorias__categoria--Bem-estar {
+.lista-categorias__categoria--Sustentabilidade {
     color: var(--cor-contraste-claro);
-    background-color: var(--cor-categoria-bem-estar);
+    background-color: var(--cor-categoria-sustentabilidade);
 }
 
-.lista-categorias__categoria--Comportamento {
+.lista-categorias__categoria--Tecnologia {
     color: var(--cor-contraste-claro);
-    background-color: var(--cor-categoria-comportamento);
+    background-color: var(--cor-categoria-tecnologia);
+}
+
+.lista-categorias__categoria--Livros {
+    color: var(--cor-contraste-claro);
+    background-color: var(--cor-categoria-livros);
+}
+
+.lista-categorias__categoria--Zen {
+    color: var(--cor-contraste-claro);
+    background-color: var(--cor-categoria-zen);
 }
 

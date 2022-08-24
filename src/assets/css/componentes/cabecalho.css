@@ -30,7 +30,8 @@
 }
 
 .cabecalho__logo {
-    width: 3rem;
+    height: 2.25rem;
+    margin-right: 0.5rem;
 }
 
 .cabecalho__new_post {
