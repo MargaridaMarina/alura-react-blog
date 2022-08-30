@@ -9,13 +9,15 @@ const ListaPost = () => {
 
   useEffect(()=>{
     http.get(`/posts`)
-    .then(res => setPosts(res.data))
+    .then(res => {
+      console.log(res.data)
+      setPosts(res.data)})
   }, [])
 
   return(
     <section className="posts container">
       {posts.map((post)=>(
-        <Link className={`cartao-posts cartao-post--${post.category}`}  to={`/posts/${post._id}`} key={post.id}>
+        <Link className={`cartao-posts cartao-post--${post.postCategory}`}  to={`/posts/${post._id}`} key={post.id}>
           <article >
             <h3 className="cartao-post__titulo">
               {post.title}

@@ -24,7 +24,7 @@ const Post = () => {
       setTitulo(data.title)
       setDescricao(data.metadescription)
       setMarkdown(data.markdown)
-      setCategoria(data.category)
+      setCategoria(data.postCategory)
       setImagem(data.image)
     }
     buscarDados();
@@ -40,7 +40,7 @@ const Post = () => {
         title: titulo,
         metadescription: descricao,
         markdown: markdown,
-        category: categoria,
+        postCategory: categoria,
         image: imagem
       })
   }

@@ -23,7 +23,7 @@ const Formulario = ({ isNew }) => {
       setTitulo(data.title)
       setDescricao(data.metadescription)
       setMarkdown(data.markdown)
-      setCategoria(data.category)
+      setCategoria(data.postCategory)
       setImagem(data.image)
     }
     buscarDados();
@@ -34,7 +34,7 @@ const Formulario = ({ isNew }) => {
         title: titulo,
         metadescription: descricao,
         markdown: markdown,
-        category: categoria,
+        postCategory: categoria,
         image: imagem
       })
   }
