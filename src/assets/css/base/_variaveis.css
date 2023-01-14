@@ -22,7 +22,7 @@
     --fonte-tamanho-naoencontrado-texto: 1.25rem;
 
     --cor-primaria: #a0dadf;
-    --cor-secundaria: #FCF8E8;
+    --cor-secundaria: #effce8;
     --cor-contraste-escuro: #4D4D4D;
     --cor-contraste-claro: rgb(255, 255, 255);
     --cor-divisao: #dadada;
@@ -30,9 +30,10 @@
     --cor-sucesso: #46bb42;
 
     --cor-categoria-sustentabilidade: #CEE5D0;
-    --cor-categoria-tecnologia: #94B49F;
-    --cor-categoria-livros: #f7ee72;
+    --cor-categoria-tecnologia: #81bebe;
+    --cor-categoria-leitura: #f8e7c8;
     --cor-categoria-zen: #c3a0df;
+    --cor-categoria-comida: #f0a597;
 
     --sombra: 0 5px 10px #55a6ff38;
 }

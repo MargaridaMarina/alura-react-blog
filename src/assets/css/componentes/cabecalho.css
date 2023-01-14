@@ -35,8 +35,8 @@
 }
 
 .cabecalho__new_post {
-    width: 2.5rem;
-    height: 2.25rem;
+    width: 2.25rem;
+    height: 2.5rem;
 }
 
 .cabecalho__titulo {
@@ -128,8 +128,6 @@
     .menu-cabecalho {
         justify-self: flex-start;
         position: static;
-        width: fit-content;
-        height: fit-content;
         grid-area: menu;
     }
 

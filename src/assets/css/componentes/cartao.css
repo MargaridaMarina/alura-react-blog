@@ -83,12 +83,16 @@
     border-color: var(--cor-categoria-tecnologia);
 }
 
-.cartao-post--Livros {
-    border-color: var(--cor-categoria-livros);
+.cartao-post--Leitura {
+    border-color: var(--cor-categoria-leitura);
 }
 
 .cartao-post--Zen {
     border-color: var(--cor-categoria-zen);
+}
+
+.cartao-post--Comida {
+    border-color: var(--cor-categoria-comida);
 }
 
 .posts {

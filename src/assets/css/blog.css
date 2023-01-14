@@ -13,22 +13,27 @@
 }
 
 .lista-categorias__categoria--Sustentabilidade {
-    color: var(--cor-contraste-claro);
+    color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-sustentabilidade);
 }
 
 .lista-categorias__categoria--Tecnologia {
-    color: var(--cor-contraste-claro);
+    color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-tecnologia);
 }
 
-.lista-categorias__categoria--Livros {
-    color: var(--cor-contraste-claro);
-    background-color: var(--cor-categoria-livros);
+.lista-categorias__categoria--Leitura {
+    color: var(--cor-contraste-escuro);
+    background-color: var(--cor-categoria-leitura);
 }
 
 .lista-categorias__categoria--Zen {
-    color: var(--cor-contraste-claro);
+    color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-zen);
+}
+
+.lista-categorias__categoria--Comida {
+    color: var(--cor-contraste-escuro);
+    background-color: var(--cor-categoria-comida);
 }
 
