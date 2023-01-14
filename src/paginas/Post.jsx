@@ -14,23 +14,24 @@ const Post = () => {
   const [descricao, setDescricao] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
+  const [subCategoria, setSubCategoria] = useState('')
   const [imagem, setImagem] = useState('')
 
   useEffect(() => {
     async function buscarDados() {
       const res = await http.get(`/posts/${id}`)
       const data = await res.data
-
       setTitulo(data.title)
       setDescricao(data.metadescription)
       setMarkdown(data.markdown)
-      setCategoria(data.postCategory)
+      setCategoria(data.postCategory.categoryName)
+      setSubCategoria(data.postCategory.subCategoryName)
       setImagem(data.image)
     }
     buscarDados();
   }, [id])
 
-  if (Object.keys({titulo, categoria, markdown, descricao}).length === 0){
+  if (Object.keys({titulo, categoria, subCategoria, markdown, descricao}).length === 0){
     // TODO: fix empty state
     return "carregando"
   }
@@ -41,6 +42,7 @@ const Post = () => {
         metadescription: descricao,
         markdown: markdown,
         postCategory: categoria,
+        postSubCategory: subCategoria,
         image: imagem
       })
   }
@@ -68,7 +70,7 @@ const Post = () => {
 
   return (
     <main className="container flex flex--centro">
-      <article className={`cartao-post cartao-post--${categoria}`}>
+      <article className={`cartao-post cartao-post--${categoria.categoryName}`}>
         <h2 className="cartao__titulo">
           {titulo}
         </h2>

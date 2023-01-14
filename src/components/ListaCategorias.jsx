@@ -12,13 +12,15 @@ const ListaCategorias = () => {
     .then(res => setCategorias(res.data))
   }, [])
 
+  console.log({categorias})
+
   return(
     <ul className="lista-categorias container flex">
       {
         categorias.map((categoria) => (
-          <Link to={`/categoria/${categoria.id}`} key={categoria.id}>
-            <li className={`lista-categorias__categoria lista-categorias__categoria--${categoria.id}`} key={categoria.id}>
-              {categoria.name}
+          <Link to={`/categorias/${categoria._id}`} key={categoria._id}>
+            <li className={`lista-categorias__categoria lista-categorias__categoria--${categoria.categoryName}`} key={categoria.id}>
+              {categoria.categoryName}
             </li>
           </Link>
         ))

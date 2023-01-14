@@ -9,39 +9,43 @@ import SubCategoria from './SubCategoria'
 const Categoria = () => {
     const { id } = useParams()
     const { url, path } = useRouteMatch()
-    const [subcategorias, setSubCategorias] = useState([])
+
+    const [postsPorCategoria, setPostsPorCategoria] = useState([])
 
     useEffect(() => {
-        http.get(`/categorias/${id}`, (categoria)=>{
-            setSubCategorias(categoria.subcategorias)
-        })
-    }, [id])
+        async function buscarDados() {
+          const res = await http.get(`/posts/categorias/${id}`)
+          console.log({res})
+          const data = await res.data
+          if (data) {
+            setPostsPorCategoria(data)
+          } else {
+            console.error('Empty data')
+          }
+        }
+        buscarDados();
+      }, [id])
 
     return(
         <>
         <div className="container">
             <h2 className="titulo-pagina"></h2>
         </div>
+
         <ListaCategorias/>
         <ul className="lista-categorias container flex">
             {
-                subcategorias.map((subcategoria)=>(
-                    <li className={`lista-categorias__categoria lista-categorias__categoria--${id}`}  key={subcategoria}>
-                        <Link to={`${url}/${subcategoria}`}>
-                            {subcategoria}
+                postsPorCategoria.map((postPorCategoria)=>(
+                    <li className={`lista-categorias__categoria lista-categorias__categoria--${""}`}  key={postPorCategoria.id}>
+                        <Link to={`${url}/${postPorCategoria.id}`}>
+                            {JSON.stringify(postPorCategoria)}
+                            
                         </Link>
                     </li>
                 ))
             }
         </ul>
-        <Switch>
-            <Route exact path={`${path}/`}>
-            <ListaPost url={`/posts?categoria=${id}`}/>  
-            </Route>
-            <Route path={`${path}/:subcategoria`}>
-                <SubCategoria/>
-            </Route>
-        </Switch>
+    
         </>
     )
 }

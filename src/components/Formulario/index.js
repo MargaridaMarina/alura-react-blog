@@ -13,6 +13,7 @@ const Formulario = ({ isNew }) => {
   const [descricao, setDescricao] = useState('')
   const [markdown, setMarkdown] = useState('')
   const [categoria, setCategoria] = useState('')
+  const [subCategoria, setSubCategoria] = useState('')
   const [imagem, setImagem] = useState('')
 
   useEffect(() => {
@@ -23,7 +24,8 @@ const Formulario = ({ isNew }) => {
       setTitulo(data.title)
       setDescricao(data.metadescription)
       setMarkdown(data.markdown)
-      setCategoria(data.postCategory)
+      setCategoria(data.postCategory.categoryName)
+      setSubCategoria(data.postCategory.subCategoryName)
       setImagem(data.image)
     }
     buscarDados();
@@ -35,6 +37,7 @@ const Formulario = ({ isNew }) => {
         metadescription: descricao,
         markdown: markdown,
         postCategory: categoria,
+        postSubCategory: subCategoria,
         image: imagem
       })
   }
@@ -94,8 +97,15 @@ const Formulario = ({ isNew }) => {
         <CampoTexto
           obrigatorio={true}
           label="Categoria"
-          placeholder="Digite aqui a categoria do post"
+          placeholder="Digite aqui a categoria do post: Zen, Tecnologia, Sustentabilidade, Leitura, Comida"
           valor={categoria}
+          onChange={valor => setCategoria(valor)}
+        />
+        <CampoTexto
+          obrigatorio={true}
+          label="SubCategoria"
+          placeholder="Digite aqui a subCategoria do post"
+          valor={subCategoria}
           onChange={valor => setCategoria(valor)}
         />
         <CampoTexto
