@@ -5,11 +5,3 @@ const http = axios.create({
 })
 
 export default http
-
-// export const busca = async(url, setDado) => {
-//   console.log(url)
-//   const resposta = await api.get(url)
-
-//   console.log({resposta})
-//   setDado(resposta.data)
-// }
