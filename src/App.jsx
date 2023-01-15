@@ -6,8 +6,8 @@ import Sobre from './paginas/Sobre'
 import Pagina404 from './paginas/Pagina404'
 import Cabecalho from './components/Cabecalho'
 import Post from './paginas/Post'
-import PostCategoria from './paginas/PostCategoria'
 import Formulario from './components/Formulario'
+import PostsPorSubcategoria from './paginas/PostsPorSubcategoria'
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
           <Sobre/>
         </Route>
         <Route path='/categorias/:id'>
-          <PostCategoria/>
+          <PostsPorSubcategoria/>
         </Route>
         <Route path='/posts/:id'>
           <Post/>
