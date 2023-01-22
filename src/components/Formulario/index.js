@@ -10,11 +10,10 @@ const Formulario = ({ isNew }) => {
   const { id } = useParams()
 
   const [titulo, setTitulo] = useState('')
-  const [descricao, setDescricao] = useState('')
-  const [markdown, setMarkdown] = useState('')
-  const [categoria, setCategoria] = useState('')
-  const [subcategoria, setSubcategoria] = useState('')
   const [imagem, setImagem] = useState('')
+  const [descricao, setDescricao] = useState('')
+  const [texto, setTexto] = useState('')
+  const [subcategoria, setSubcategoria] = useState('')
 
   useEffect(() => {
     async function buscarDados() {
@@ -22,11 +21,11 @@ const Formulario = ({ isNew }) => {
       const data = await res.data
 
       setTitulo(data.title)
-      setDescricao(data.metadescription)
-      setMarkdown(data.markdown)
-      setCategoria(data.postCategory.categoryName)
-      setSubcategoria(data.postCategory.subCategoryName)
       setImagem(data.image)
+      setDescricao(data.mdescription)
+      setTexto(data.text)
+      setSubcategoria(data.subcategoria_id)
+      
     }
     buscarDados();
   }, [id])
@@ -34,11 +33,10 @@ const Formulario = ({ isNew }) => {
   const httpRequestMethod = (method, url) => {
     return method(url, {
         title: titulo,
-        metadescription: descricao,
-        markdown: markdown,
-        postCategory: categoria,
-        postSubCategory: subcategoria,
-        image: imagem
+        image: imagem,
+        description: descricao,
+        text: texto,
+        subcategoria_id: subcategoria,
       })
   }
 
@@ -96,25 +94,18 @@ const Formulario = ({ isNew }) => {
         />
         <CampoTexto
           obrigatorio={true}
-          label="Categoria"
-          placeholder="Digite aqui a categoria do post: Zen, Tecnologia, Sustentabilidade, Leitura, Comida"
-          valor={categoria}
-          onChange={valor => setCategoria(valor)}
-        />
-        <CampoTexto
-          obrigatorio={true}
           label="Subcategoria"
           placeholder="Digite aqui a subcategoria do post"
           valor={subcategoria}
           onChange={valor => setSubcategoria(valor)}
         />
         <CampoTexto
-          classe="markdown"
+          classe="texto"
           obrigatorio={true}
           label="Texto"
           placeholder="Digite o texto do post"
-          valor={markdown}
-          onChange={valor => setMarkdown(valor)}
+          valor={texto}
+          onChange={valor => setTexto(valor)}
         />
         {renderActionButtons()}
       </form>

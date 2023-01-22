@@ -10,20 +10,22 @@ const ListaPost = () => {
   useEffect(()=>{
     http.get(`/posts`)
     .then(res => {
-      setPosts(res.data)})
+      setPosts(res.data)
+    })
   }, [])
+
   return(
     <section className="posts container">
       {posts.map((post)=>(
-        <Link className={`cartao-posts cartao-post--${post.postCategory.categoryName}`}  to={`/posts/${post._id}`} key={post.id}>
-          <article >
+        <Link className={`cartao-posts cartao-post--${post.subcategoria_id}`}  to={`/posts/${post.id}`}  key={post.id}>
+          <article>
             <h3 className="cartao-post__titulo">
               {post.title}
             </h3>
             <p className="cartao-post__meta">
-              {post.metadescription}
+              {post.description}
             </p>
-            <img className="cartao-post__image" src={post.image} alt={post.metadescription}/>
+            <img className="cartao-post__image" src={post.image} alt={post.description}/>
           </article>
         </Link>
       ))}

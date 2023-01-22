@@ -9,18 +9,19 @@ const ListaCategorias = () => {
   
   useEffect(()=>{
     http.get(`/categorias`)
-    .then(res => setCategorias(res.data))
+    .then(res => 
+      {
+      setCategorias(res.data)}
+      )
   }, [])
-
-  console.log({categorias})
 
   return(
     <ul className="lista-categorias container flex">
       {
         categorias.map((categoria) => (
-          <Link to={`/categorias/${categoria._id}`} key={categoria._id}>
-            <li className={`lista-categorias__categoria lista-categorias__categoria--${categoria.categoryName}`} key={categoria.id}>
-              {categoria.categoryName}
+          <Link to={`/categorias/${categoria.id}`} key={categoria.id}>
+            <li className={`lista-categorias__categoria lista-categorias__categoria--${categoria.title}`}>
+              {categoria.title}
             </li>
           </Link>
         ))

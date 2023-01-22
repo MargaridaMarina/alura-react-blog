@@ -8,6 +8,9 @@ import Cabecalho from './components/Cabecalho'
 import Post from './paginas/Post'
 import Formulario from './components/Formulario'
 import PostsPorSubcategoria from './paginas/PostsPorSubcategoria'
+import ListaCategorias from './components/ListaCategorias'
+import ListaSubcategorias from './components/ListaSubcategorias'
+import ListaPost from './components/ListaPost'
 
 function App() {
 
@@ -23,6 +26,11 @@ function App() {
           <Sobre/>
         </Route>
         <Route path='/categorias/:id'>
+          <ListaCategorias/>
+          <ListaSubcategorias/>
+          <ListaPost/>
+        </Route>
+        <Route path='/posts/subcategorias/:id'>
           <PostsPorSubcategoria/>
         </Route>
         <Route path='/posts/:id'>
