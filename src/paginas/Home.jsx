@@ -9,7 +9,7 @@ const Home = () => {
       <div className="container">
         <h2 className="titulo-pagina"></h2>
       </div>
-      <ListaCategorias url={'/categorias'}/>
+      <ListaCategorias/>
       <ListaPost url={'/posts'}/>
     </main>
   )

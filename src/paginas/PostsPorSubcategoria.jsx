@@ -1,51 +1,58 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Route, Switch, useParams, useRouteMatch } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import http from '../api/api'
 import '../assets/css/blog.css'
 import ListaCategorias from '../components/ListaCategorias'
-import ListaPost from '../components/ListaPost'
-import Subcategoria from './Subcategoria'
+import ListaSubcategorias from '../components/ListaSubcategorias'
+import Post from './Post'
 
 const PostsPorSubcategoria = () => {
-    const { id } = useParams()
-    const { url, path } = useRouteMatch()
-    
-    const [postsPorSubcategoria, setPostsPorSubcategoria] = useState([])
+  const { id } = useParams()
 
-    useEffect(() => {
-        async function buscarDados() {
-          const res = await http.get(`/posts/categorias/${id}`)
-          console.log('Res', {res})
-          const data = await res.data
-          console.log('Data', data)
-          if (data) {
-            setPostsPorSubcategoria(data)
-          } else {
-            console.error('Empty data')
-          }
+  const [postsPorSubcategorias, setpostsPorSubcategorias] = useState([])
+
+  useEffect(() => {
+    async function buscarDados() {
+      const res = await http.get(`/posts/subcategorias/${id}`)
+      const data = await res.data
+      setpostsPorSubcategorias(data)
+    }
+    buscarDados();
+  }, [id])
+
+  return (
+    <>
+      <ListaCategorias />
+      <ListaSubcategorias />
+      <ul className="lista-categorias container flex">
+        {
+          postsPorSubcategorias.map(({
+            subcategoria,
+            titulo,
+            descricao,
+            imagem,
+            id,
+            texto
+          }) => (
+            <li
+              className={`lista-categorias__categoria lista-categorias__categoria--${id}`}
+              key={id}
+            >
+              <Post
+                subcategoria={subcategoria}
+                titulo={titulo}
+                descricao={descricao}
+                imagem={imagem}
+                id={id}
+                texto={texto}
+              />
+            </li>
+          ))
         }
-        buscarDados();
-      }, [id])
+      </ul>
 
-    return(
-        <>
-            <ListaCategorias />
-            <ul className="lista-categorias container flex">
-                {
-                postsPorSubcategoria.map((postPorSubcategoria) => (
-                    <li
-                    className={`lista-categorias__categoria lista-categorias__categoria--${id}`}
-                    key={postPorSubcategoria.id}
-                    >
-                        <Link to={`${url}/${postPorSubcategoria.id}`}>
-                            {postPorSubcategoria}
-                        </Link>
-                    </li>
-                ))
-                }
-            </ul>
-        </>
-    )
+    </>
+  )
 }
 
 export default PostsPorSubcategoria
