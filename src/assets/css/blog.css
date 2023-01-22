@@ -1,7 +1,7 @@
 .lista-categorias {
     width: 100%;
     box-sizing: border-box;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-bottom: 2rem;
 }
 
@@ -12,27 +12,32 @@
     padding: 1rem;
 }
 
-.lista-categorias__categoria--Sustentabilidade {
+.lista-categorias__categoria--1-Sustentabilidade,
+.lista-categorias__subcategoria--1 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-sustentabilidade);
 }
 
-.lista-categorias__categoria--Tecnologia {
+.lista-categorias__categoria--4-Tecnologia,
+.lista-categorias__subcategoria--4 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-tecnologia);
 }
 
-.lista-categorias__categoria--Leitura {
+.lista-categorias__categoria--5-Leitura,
+.lista-categorias__subcategoria--5 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-leitura);
 }
 
-.lista-categorias__categoria--Zen {
+.lista-categorias__categoria--3-Zen,
+.lista-categorias__subcategoria--3 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-zen);
 }
 
-.lista-categorias__categoria--Comida {
+.lista-categorias__categoria--2-Culinária,
+.lista-categorias__subcategoria--2 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-comida);
 }

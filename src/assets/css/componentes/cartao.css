@@ -75,23 +75,23 @@
     width: 100%;
 }
 
-.cartao-post--Sustentabilidade {
+.cartao-post--1 {
     border-color: var(--cor-categoria-sustentabilidade);
 }
 
-.cartao-post--Tecnologia {
+.cartao-post--4 {
     border-color: var(--cor-categoria-tecnologia);
 }
 
-.cartao-post--Leitura {
+.cartao-post--5 {
     border-color: var(--cor-categoria-leitura);
 }
 
-.cartao-post--Zen {
+.cartao-post--3 {
     border-color: var(--cor-categoria-zen);
 }
 
-.cartao-post--Comida {
+.cartao-post--2 {
     border-color: var(--cor-categoria-comida);
 }
 

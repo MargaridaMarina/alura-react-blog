@@ -17,6 +17,7 @@ body {
 
 .flex {
 	display: flex;
+	margin-top: 2rem;
 }
 
 .flex--centro {
