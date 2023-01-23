@@ -25,12 +25,12 @@ function App() {
         <Route path='/sobre'>
           <Sobre/>
         </Route>
-        <Route path='/categorias/:id'>
+        <Route path='/categorias/:categoriaTitle'>
           <ListaCategorias/>
           <ListaSubcategorias/>
           <ListaPost/>
         </Route>
-        <Route path='/posts/subcategorias/:id'>
+        <Route path='/posts/subcategorias/:subcategoriaTitle'>
           <PostsPorSubcategoria/>
         </Route>
         <Route path='/posts/:id'>
