@@ -7,37 +7,36 @@
 
 .lista-categorias__categoria {
     font-weight: var(--fonte-peso-categorias);
-    background-color: var(--cor-contraste-claro);
     border-radius: 3rem;
     padding: 1rem;
 }
 
-.lista-categorias__categoria--1-Sustentabilidade,
-.lista-categorias__subcategoria--1 {
+.lista-categorias__categoria--Sustentabilidade,
+.lista-categorias__subcategoria--Reciclagem {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-sustentabilidade);
 }
 
-.lista-categorias__categoria--4-Tecnologia,
-.lista-categorias__subcategoria--4 {
+.lista-categorias__categoria--Tecnologia,
+.lista-categorias__subcategoria--GreenTech {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-tecnologia);
 }
 
-.lista-categorias__categoria--5-Leitura,
-.lista-categorias__subcategoria--5 {
+.lista-categorias__categoria--Leitura,
+.lista-categorias__subcategoria--Romance {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-leitura);
 }
 
-.lista-categorias__categoria--3-Zen,
-.lista-categorias__subcategoria--3 {
+.lista-categorias__categoria--Zen,
+.lista-categorias__subcategoria--Meditação {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-zen);
 }
 
-.lista-categorias__categoria--2-Culinária,
-.lista-categorias__subcategoria--2 {
+.lista-categorias__categoria--Culinária,
+.lista-categorias__subcategoria--Saudável {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-comida);
 }
