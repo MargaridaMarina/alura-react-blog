@@ -75,23 +75,24 @@
     width: 100%;
 }
 
-.cartao-post--1 {
+.cartao-post--Reciclagem, 
+.cartao-post--6 {
     border-color: var(--cor-categoria-sustentabilidade);
 }
 
-.cartao-post--4 {
+.cartao-post--GreenTech {
     border-color: var(--cor-categoria-tecnologia);
 }
 
-.cartao-post--5 {
+.cartao-post--Romance {
     border-color: var(--cor-categoria-leitura);
 }
 
-.cartao-post--3 {
+.cartao-post--Meditação {
     border-color: var(--cor-categoria-zen);
 }
 
-.cartao-post--2 {
+.cartao-post--Saudável {
     border-color: var(--cor-categoria-comida);
 }
 
