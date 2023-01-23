@@ -7,18 +7,18 @@ import ListaSubcategorias from '../components/ListaSubcategorias'
 import Post from './Post'
 
 const PostsPorSubcategoria = () => {
-  const { id } = useParams()
-
+  const { subcategoriaTitle } = useParams()
   const [postsPorSubcategorias, setpostsPorSubcategorias] = useState([])
 
   useEffect(() => {
     async function buscarDados() {
-      const res = await http.get(`/posts/subcategorias/${id}`)
+      const res = await http.get(`/posts/subcategorias/${subcategoriaTitle}`)
       const data = await res.data
+      console.log('data', data)
       setpostsPorSubcategorias(data)
     }
     buscarDados();
-  }, [id])
+  }, [subcategoriaTitle])
 
   return (
     <>
@@ -35,7 +35,7 @@ const PostsPorSubcategoria = () => {
             texto
           }) => (
             <li
-              className={`lista-categorias__categoria lista-categorias__categoria--${id}`}
+              className={`lista-categorias__categoria lista-categorias__categoria--${subcategoriaTitle}`}
               key={id}
             >
               <Post

@@ -36,7 +36,7 @@ const PostSemEstado = ({
       image: imagem,
       description: descricao,
       text: texto,
-      subcategoria_id: subcategoria,
+      subcategoria_title: subcategoria,
     })
   }
 
@@ -68,6 +68,7 @@ const PostSemEstado = ({
 
 const Post = () => {
   const { id } = useParams()
+  
   const [titulo, setTitulo] = useState('')
   const [imagem, setImagem] = useState('')
   const [descricao, setDescricao] = useState('')
@@ -83,7 +84,7 @@ const Post = () => {
       setImagem(data.image)
       setDescricao(data.description)
       setTexto(data.text)
-      setSubcategoria(data.subcategoria_id)
+      setSubcategoria(data.subcategoria_title)
     }
     buscarDados();
   }, [id])
@@ -102,9 +103,6 @@ const Post = () => {
       subcategoria={subcategoria}
     />
   )
-
-
-
 }
 
 export default Post
