@@ -35,7 +35,7 @@ const PostsPorSubcategoria = () => {
             text
           }) => (
             <li
-              className={`lista-categorias__categoria lista-categorias__categoria--${subcategoriaTitle}`}
+              className={`lista-categorias__categoria lista-categorias__categoria--${id}`}
               key={id}
             >
               <PostSemEstado
