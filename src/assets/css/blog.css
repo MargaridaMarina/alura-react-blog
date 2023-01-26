@@ -10,39 +10,38 @@
     border-radius: 3rem;
     padding: 1rem;
     margin-right: 1rem;
-    align-items: stretch;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .lista-categorias__categoria--Sustentabilidade,
-.lista-categorias__subcategoria--Reciclagem {
+.lista-categorias__subcategoria--1,
+.lista-categorias__subcategoria--5 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-sustentabilidade);
 }
 
 .lista-categorias__categoria--Tecnologia,
-.lista-categorias__subcategoria--GreenTech {
+.lista-categorias__subcategoria--4 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-tecnologia);
 }
 
-.lista-categorias__categoria--Leitura,
-.lista-categorias__subcategoria--Romance {
+.lista-categorias__categoria--Limpeza,
+.lista-categorias__subcategoria--6 {
     color: var(--cor-contraste-escuro);
-    background-color: var(--cor-categoria-leitura);
+    background-color: var(--cor-categoria-limpeza);
 }
 
 .lista-categorias__categoria--Zen,
-.lista-categorias__subcategoria--Meditação {
+.lista-categorias__subcategoria--3 {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-zen);
 }
 
-.lista-categorias__categoria--Culinária,
-.lista-categorias__subcategoria--Saudável {
+.lista-categorias__categoria--Receitas,
+.lista-categorias__subcategoria--7,
+.lista-categorias__subcategoria--8,
+.lista-categorias__subcategoria--9 {
     color: var(--cor-contraste-escuro);
-    background-color: var(--cor-categoria-comida);
+    background-color: var(--cor-categoria-receitas);
 }
 
