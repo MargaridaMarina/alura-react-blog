@@ -15,9 +15,9 @@ const ListaPost = () => {
   }, [])
 
   return(
-    <section className="posts container">
+    <section className="posts container flex">
       {posts.map((post)=>(
-        <Link className={`cartao-posts cartao-post--${post.subcategoria_title}`}  to={`/posts/${post.id}`}  key={post.id}>
+        <Link className={`cartao-posts cartao-post--${post.id}`}  to={`/posts/${post.id}`}  key={post.id}>
           <article>
             <h3 className="cartao-post__titulo">
               {post.title}

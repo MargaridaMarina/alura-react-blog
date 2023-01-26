@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Botao from '../components/Botao';
 import ReactMarkdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
+import ListaSubcategorias from "../components/ListaSubcategorias";
 
 const PostSemEstado = ({
     subcategoria,
@@ -47,7 +48,7 @@ const PostSemEstado = ({
   
     return (
       <main className="container flex flex--centro">
-        <article className={`cartao-post cartao-post--${subcategoria}`}>
+        <article className={`cartao-post cartao-post--${id}`}>
           <h2 className="cartao__titulo">
             {titulo}
           </h2>

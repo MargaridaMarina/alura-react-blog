@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Switch, useParams, useRouteMatch } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import http from "../api/api";
 import '../assets/css/blog.css'
 
@@ -18,13 +18,13 @@ const ListaSubcategorias = () => {
       console.log({err})
     })
   }, [categoriaTitle])
-
+  if (!subcategorias || subcategorias.length == 0) return<></>;
   return(
     <ul className="lista-categorias container flex">
       {
         subcategorias.map((subcategoria) => (
           <Link to={`/posts/subcategorias/${subcategoria.title}`} key={subcategoria.id}>
-            <li className={`lista-categorias__categoria lista-categorias__subcategoria--${subcategoria.title}`} key={subcategoria.id}>
+            <li className={`lista-categorias__subcategoria lista-categorias__subcategoria--${subcategoria.id}`} key={subcategoria.id}>
               {subcategoria.title}
             </li>
           </Link>
