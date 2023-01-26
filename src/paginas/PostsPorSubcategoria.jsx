@@ -4,18 +4,18 @@ import http from '../api/api'
 import '../assets/css/blog.css'
 import ListaCategorias from '../components/ListaCategorias'
 import ListaSubcategorias from '../components/ListaSubcategorias'
-import Post from './Post'
+import PostSemEstado from './PostSemEstado'
 
 const PostsPorSubcategoria = () => {
   const { subcategoriaTitle } = useParams()
-  const [postsPorSubcategorias, setpostsPorSubcategorias] = useState([])
+  const [postsPorSubcategorias, setPostsPorSubcategorias] = useState([])
 
   useEffect(() => {
     async function buscarDados() {
       const res = await http.get(`/posts/subcategorias/${subcategoriaTitle}`)
       const data = await res.data
       console.log('data', data)
-      setpostsPorSubcategorias(data)
+      setPostsPorSubcategorias(data)
     }
     buscarDados();
   }, [subcategoriaTitle])
@@ -27,24 +27,24 @@ const PostsPorSubcategoria = () => {
       <ul className="lista-categorias container flex">
         {
           postsPorSubcategorias.map(({
-            subcategoria,
-            titulo,
-            descricao,
-            imagem,
+            subcategoria_title,
+            title,
+            description,
+            image,
             id,
-            texto
+            text
           }) => (
             <li
               className={`lista-categorias__categoria lista-categorias__categoria--${subcategoriaTitle}`}
               key={id}
             >
-              <Post
-                subcategoria={subcategoria}
-                titulo={titulo}
-                descricao={descricao}
-                imagem={imagem}
+              <PostSemEstado
+                subcategoria={subcategoria_title}
+                titulo={title}
+                descricao={description}
+                imagem={image}
                 id={id}
-                texto={texto}
+                texto={text}
               />
             </li>
           ))
