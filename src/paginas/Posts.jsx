@@ -3,9 +3,10 @@ import http from "../api/api";
 import '../assets/css/post.css'
 import { useParams } from "react-router-dom";
 import PostSemEstado from "./PostSemEstado";
+import ListaSubcategorias from "../components/ListaSubcategorias";
 
 
-const Post = () => {
+const Posts = () => {
   const { id } = useParams()
   
   const [titulo, setTitulo] = useState('')
@@ -34,14 +35,18 @@ const Post = () => {
   }
 
   return (
-    <PostSemEstado
-      titulo={titulo}
-      imagem={imagem}
-      descricao={descricao}
-      texto={texto}
-      subcategoria={subcategoria}
-    />
+    <>
+      <ListaSubcategorias/>
+      <PostSemEstado
+        titulo={titulo}
+        imagem={imagem}
+        descricao={descricao}
+        texto={texto}
+        subcategoria={subcategoria}
+      />
+    </>
+    
   )
 }
 
-export default Post
+export default Posts
