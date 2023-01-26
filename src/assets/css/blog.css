@@ -1,14 +1,19 @@
 .lista-categorias {
     width: 100%;
     box-sizing: border-box;
-    justify-content: space-around;
-    margin-bottom: 2rem;
+    justify-content: center;
 }
 
-.lista-categorias__categoria {
+.lista-categorias__categoria,
+.lista-categorias__subcategoria {
     font-weight: var(--fonte-peso-categorias);
     border-radius: 3rem;
     padding: 1rem;
+    margin-right: 1rem;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .lista-categorias__categoria--Sustentabilidade,

@@ -38,9 +38,9 @@
     --sombra: 0 5px 10px #55a6ff38;
 }
 
-@media(min-width: 800px) {
+/* @media(min-width: 800px) {
     :root {
         --fonte-tamanho-logo: 2.5rem;
         --fonte-tamanho-menu-cabecalho-item: 1rem;
         }
-}
+} */

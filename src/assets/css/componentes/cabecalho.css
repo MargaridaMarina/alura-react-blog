@@ -30,13 +30,9 @@
 }
 
 .cabecalho__logo {
-    height: 2.25rem;
-    margin-right: 0.5rem;
-}
-
-.cabecalho__new_post {
     width: 2.25rem;
-    height: 2.5rem;
+    height: 2.25rem;
+    margin-right: 2.25rem;
 }
 
 .cabecalho__titulo {
@@ -111,15 +107,15 @@
     left: 0;
 }
 
-@media(min-width: 900px) {
+/* @media(min-width: 900px) {
     .cabecalho {
         grid-template-areas: "menu logo .";
         height: 6.75rem;
     }
 
-    /* .cabecalho-container {
+     .cabecalho-container {
         grid-area: logo;
-    } */
+    } 
 
     .menu-hamburguer {
         display: none;
@@ -139,10 +135,10 @@
         display: none;
     }
 
-    /* .menu-itens {
+    .menu-itens {
         display: flex;
         align-items: center;
-    } */
+    } 
 
     .menu-item {
         border: none;
@@ -153,4 +149,4 @@
     .menu-item--entrar {
         padding: 1rem 1.5rem;
     }
-}
+} */

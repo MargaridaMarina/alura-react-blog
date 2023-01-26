@@ -11,8 +11,8 @@ body {
 }
 
 .container { 
-	padding-right: 1rem;
-	padding-left: 1rem;
+	padding-left: calc((100vw - 900px)/2);
+	padding-right: calc((100vw - 900px)/2);
 }
 
 .flex {
@@ -43,7 +43,7 @@ body {
 	margin-top: 1.25rem;
 }
 
-@media(min-width: 800px) {
+/* @media(min-width: 800px) {
   .container {
 		padding-right: 2.5rem;
 		padding-left: 2.5rem;	
@@ -55,4 +55,4 @@ body {
 		padding-left: calc((100vw - 900px)/2);
 		padding-right: calc((100vw - 900px)/2);
 	}
-}
+} */

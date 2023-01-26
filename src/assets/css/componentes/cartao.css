@@ -97,16 +97,17 @@
 }
 
 .posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-@media(min-width: 900px) {
+/* @media(min-width: 900px) {
     .posts {
         align-items: stretch;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
-}
+} */
