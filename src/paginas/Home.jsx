@@ -1,6 +1,6 @@
 import React from 'react'
 import ListaCategorias from '../components/ListaCategorias'
-import ListaPost from '../components/ListaPost'
+import ListaPosts from '../components/ListaPosts'
 
 const Home = () => {
 
@@ -10,7 +10,7 @@ const Home = () => {
         <h2 className="titulo-pagina"></h2>
       </div>
       <ListaCategorias/>
-      <ListaPost url={'/posts'}/>
+      <ListaPosts url={'/posts'}/>
     </main>
   )
 }

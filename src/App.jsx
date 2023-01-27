@@ -6,7 +6,7 @@ import Cabecalho from './components/Cabecalho'
 import Formulario from './components/Formulario'
 import PostsPorSubcategoria from './paginas/PostsPorSubcategoria'
 import ListaCategorias from './components/ListaCategorias'
-import ListaPost from './components/ListaPost'
+import ListaPosts from './components/ListaPosts'
 import Posts from './paginas/Posts'
 import Sobre from './paginas/Sobre'
 import ListaSubcategorias from './components/ListaSubcategorias'
@@ -19,8 +19,8 @@ function App() {
       <Cabecalho/>
       <Switch>
         <Route exact path='/posts'>
-          <ListaCategorias/>
-          <ListaPost/>
+          <ListaCategorias/>         
+          <ListaPosts/>
         </Route>
         {/* <Route path='/sobre'>
           <Sobre/>
@@ -28,7 +28,7 @@ function App() {
         <Route path='/categorias/:categoriaTitle'>
           <ListaCategorias/>
           <ListaSubcategorias/>
-          <ListaPost/>
+          <ListaPosts/>
         </Route>
         <Route path='/posts/subcategorias/:subcategoriaTitle'>
           <PostsPorSubcategoria/>

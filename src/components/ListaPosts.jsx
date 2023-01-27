@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import http from "../api/api";
 
 
-const ListaPost = () => {
+const ListaPosts = () => {
 
   const [posts, setPosts] = useState([])
 
@@ -33,4 +33,4 @@ const ListaPost = () => {
   )
 }
 
-export default ListaPost
+export default ListaPosts
