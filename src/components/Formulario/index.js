@@ -24,7 +24,7 @@ const Formulario = ({ isNew }) => {
       setImagem(data.image)
       setDescricao(data.description)
       setTexto(data.text)
-      setSubcategoria(data.subcategoria_title)
+      setSubcategoria(data.subcategory_title)
       
     }
     buscarDados();
@@ -36,7 +36,7 @@ const Formulario = ({ isNew }) => {
         image: imagem,
         description: descricao,
         text: texto,
-        subcategoria_title: subcategoria,
+        subcategory_title: subcategoria,
       })
   }
 

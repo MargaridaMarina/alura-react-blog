@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import http from '../api/api'
 import '../assets/css/blog.css'
 import ListaCategorias from '../components/ListaCategorias'
-import ListaSubcategorias from '../components/ListaSubcategorias'
 import PostSemEstado from './PostSemEstado'
 
 const PostsPorSubcategoria = () => {
@@ -23,11 +22,10 @@ const PostsPorSubcategoria = () => {
   return (
     <>
       <ListaCategorias />
-      <ListaSubcategorias />
       <ul className="lista-categorias container flex">
         {
           postsPorSubcategorias.map(({
-            subcategoria_title,
+            subcategory_title,
             title,
             description,
             image,
@@ -39,7 +37,7 @@ const PostsPorSubcategoria = () => {
               key={id}
             >
               <PostSemEstado
-                subcategoria={subcategoria_title}
+                subcategoria={subcategory_title}
                 titulo={title}
                 descricao={description}
                 imagem={image}

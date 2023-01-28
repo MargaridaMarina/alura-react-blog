@@ -3,7 +3,6 @@ import http from "../api/api";
 import '../assets/css/post.css'
 import { useParams } from "react-router-dom";
 import PostSemEstado from "./PostSemEstado";
-import ListaSubcategorias from "../components/ListaSubcategorias";
 
 
 const Posts = () => {
@@ -24,7 +23,7 @@ const Posts = () => {
       setImagem(data.image)
       setDescricao(data.description)
       setTexto(data.text)
-      setSubcategoria(data.subcategoria_title)
+      setSubcategoria(data.subcategory_title)
     }
     buscarDados();
   }, [id])
@@ -36,7 +35,6 @@ const Posts = () => {
 
   return (
     <>
-      <ListaSubcategorias/>
       <PostSemEstado
         titulo={titulo}
         imagem={imagem}
