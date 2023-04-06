@@ -1,6 +1,5 @@
 .lista-categorias {
     width: 100%;
-    box-sizing: border-box;
     justify-content: center;
 }
 
@@ -12,36 +11,28 @@
     margin-right: 1rem;
 }
 
-.lista-categorias__categoria--Sustentabilidade,
-.lista-categorias__subcategoria--1,
-.lista-categorias__subcategoria--5 {
+.lista-categorias__categoria--Sustentabilidade {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-sustentabilidade);
 }
 
-.lista-categorias__categoria--Tecnologia,
-.lista-categorias__subcategoria--4 {
+.lista-categorias__categoria--Tecnologia {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-tecnologia);
 }
 
-.lista-categorias__categoria--Limpeza,
-.lista-categorias__subcategoria--6 {
+.lista-categorias__categoria--Limpeza {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-limpeza);
 }
 
-.lista-categorias__categoria--Zen,
-.lista-categorias__subcategoria--3 {
+.lista-categorias__categoria--Zen {
     color: var(--cor-contraste-escuro);
     background-color: var(--cor-categoria-zen);
 }
 
-.lista-categorias__categoria--Receitas,
-.lista-categorias__subcategoria--7,
-.lista-categorias__subcategoria--8,
-.lista-categorias__subcategoria--9 {
+.lista-categorias__categoria--Culinária {
     color: var(--cor-contraste-escuro);
-    background-color: var(--cor-categoria-receitas);
+    background-color: var(--cor-categoria-culinaria);
 }
 

@@ -76,28 +76,24 @@
     /* width: 20rem; */
 }
 
-.cartao-post--1, 
-.cartao-post--5 {
+.cartao-post--Sustentabilidade {
     border-color: var(--cor-categoria-sustentabilidade);
 }
 
-.cartao-post--4 {
+.cartao-post--Tecnologia {
     border-color: var(--cor-categoria-tecnologia);
 }
 
-.cartao-post--6 {
+.cartao-post--Limpeza {
     border-color: var(--cor-categoria-limpeza);
 }
 
-.cartao-post--3 {
+.cartao-post--Zen {
     border-color: var(--cor-categoria-zen);
 }
 
-.cartao-post--7
-.cartao-post--8
-.cartao-post--9
- {
-    border-color: var(--cor-categoria-receitas);
+.cartao-post--Culinária {
+    border-color: var(--cor-categoria-culinaria);
 }
 
 .posts {
