@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import Botao from '../components/Botao';
 import ReactMarkdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
-import ListaSubcategorias from "../components/ListaSubcategorias";
+import '../assets/css/componentes/cartao.css'
 
 const PostSemEstado = ({
+    categoria,
     subcategoria,
     titulo,
     descricao,
@@ -17,7 +18,7 @@ const PostSemEstado = ({
     const renderActionButtons = () => (
       <div>
         <Botao>
-          <Link to={`/editarpost/${id}`}>Editar</Link>
+          <Link to={`/editarPost/${id}`}>Editar</Link>
         </Botao>
         <Botao onClick={deletarPost}> Deletar </Botao>
       </div>
@@ -36,7 +37,8 @@ const PostSemEstado = ({
         description: descricao,
         text: texto,
         id: id,
-        subcategoria_title: subcategoria,
+        subcategory_title: subcategoria,
+        category_title: categoria
       })
     }
   
@@ -48,7 +50,7 @@ const PostSemEstado = ({
   
     return (
       <main className="container flex flex--centro">
-        <article className={`cartao-post cartao-post--${id}`}>
+        <article className={`cartao-post cartao-post--${categoria}`}>
           <h2 className="cartao__titulo">
             {titulo}
           </h2>
