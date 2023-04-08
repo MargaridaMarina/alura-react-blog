@@ -3,30 +3,30 @@ import { Link } from "react-router-dom";
 import http from "../api/api";
 import '../assets/css/componentes/cartao.css'
 
-const ListaPosts = () => {
+const ListaLojas = () => {
 
-  const [posts, setPosts] = useState([])
+  const [lojas, setLojas] = useState([])
 
   useEffect(()=>{
-    http.get(`/posts`)
+    http.get(`/lojas`)
     .then(res => {
-      setPosts(res.data)
-      console.log('resposta posts', res.data)
+      setLojas(res.data)
+      console.log('RESPOSTA', res.data)
     })
   }, [])
 
   return(
     <section className="posts container flex">
-      {posts.map((post)=>(
-        <Link className={`cartao-posts cartao-post--${post.category_title}`}  to={`/posts/${post.id}`}  key={post.id}>
+      {lojas.map((loja)=>(
+        <Link className={`cartao-posts cartao-post--${loja.category_title}`}  to={`/Lojas/${loja.id}`}  key={loja.id}>
           <article>
             <h3 className="cartao-post__titulo">
-              {post.title}
+              {loja.title}
             </h3>
             <p className="cartao-post__meta">
-              {post.description}
+              {loja.description}
             </p>
-            <img className="cartao-post__image" src={post.image} alt={post.description}/>
+            <img className="cartao-post__image" src={loja.image} alt={loja.description}/>
           </article>
         </Link>
       ))}
@@ -34,4 +34,4 @@ const ListaPosts = () => {
   )
 }
 
-export default ListaPosts
+export default ListaLojas
