@@ -7,13 +7,15 @@ import Formulario from './components/Formulario'
 import PostsPorSubcategoria from './paginas/PostsPorSubcategoria'
 import ListaCategorias from './components/ListaCategorias'
 import ListaPosts from './components/ListaPosts'
-import Posts from './paginas/Posts'
+import Post from './paginas/Post'
 import ListaSubcategorias from './components/ListaSubcategorias'
 import ListaLojas from './components/ListaLojas'
 import ListaReceitas from './components/ListaReceitas'
 import LojasPorSubcategoria from './paginas/LojasPorSubcategoria'
-import Lojas from './paginas/Lojas'
+import Loja from './paginas/Loja'
 import Sobre from './paginas/Sobre'
+import Receita from './paginas/Receita'
+import ReceitasPorSubcategoria from './paginas/ReceitasPorSubcategoria'
 
 
 function App() {
@@ -36,7 +38,7 @@ function App() {
           <PostsPorSubcategoria/>
         </Route>
         <Route exact path='/posts/:id'>
-          <Posts/>
+          <Post/>
         </Route>
         <Route exact path='/editarPost/:id'>
           <Formulario/>
@@ -50,7 +52,7 @@ function App() {
           <LojasPorSubcategoria/>
         </Route>
         <Route exact path='/lojas/:id'>
-          <Lojas/>
+          <Loja/>
         </Route>
         <Route exact path='/loja/nova'>
           <Formulario isNew/>
@@ -62,6 +64,18 @@ function App() {
           <ListaCategorias origem='receitas'/>         
           <ListaSubcategorias origem='receitas'/>
           <ListaReceitas/>
+        </Route>
+        <Route exact path='/receitas/subcategorias/:subcategoriaTitle'>
+          <ReceitasPorSubcategoria/>
+        </Route>
+        <Route exact path='/receitas/:id'>
+          <Receita/>
+        </Route>
+        <Route exact path='/receitas/nova'>
+          <Formulario isNew/>
+        </Route>
+        <Route exact path='/editarReceita/:id'>
+          <Formulario/>
         </Route>
         <Route exact path='/sobre'>
           <Sobre/>
