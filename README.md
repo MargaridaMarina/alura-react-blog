@@ -4,5 +4,5 @@ $ npm i
 ```
 ### Executando aplicação
 ```
-$ npm start
+$ npm run start
 ```
