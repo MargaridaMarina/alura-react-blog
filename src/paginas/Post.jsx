@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import PostSemEstado from "./PostSemEstado";
 
 
-const Posts = () => {
+const Post = () => {
   const { id } = useParams()
   
   const [titulo, setTitulo] = useState('')
@@ -13,6 +13,8 @@ const Posts = () => {
   const [descricao, setDescricao] = useState('')
   const [texto, setTexto] = useState('')
   const [subcategoria, setSubcategoria] = useState('')
+  const [categoria, setCategoria] = useState('')
+
 
   useEffect(() => {
     async function buscarDados() {
@@ -24,11 +26,12 @@ const Posts = () => {
       setDescricao(data.description)
       setTexto(data.text)
       setSubcategoria(data.subcategory_title)
+      setCategoria(data.category_title)
     }
     buscarDados();
   }, [id])
 
-  if (Object.keys({ titulo, imagem, descricao, texto, subcategoria }).length === 0) {
+  if (Object.keys({ titulo, imagem, descricao, texto, subcategoria, categoria }).length === 0) {
     // TODO: fix empty state
     return "carregando"
   }
@@ -41,10 +44,11 @@ const Posts = () => {
         descricao={descricao}
         texto={texto}
         subcategoria={subcategoria}
+        categoria={categoria}
       />
     </>
     
   )
 }
 
-export default Posts
+export default Post
