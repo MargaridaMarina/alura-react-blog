@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import http from "../api/api";
-import '../assets/css/blog.css'
+import '../assets/css/lista.css'
 
-const ListaCategorias = () => {
+const ListaCategorias = ({origem = ''}) => {
 
   const [categorias, setCategorias] = useState([])
   
@@ -16,7 +16,7 @@ const ListaCategorias = () => {
   }, [])
 
   return(
-    <ul className="lista-categorias container flex">
+    <ul className="lista-categorias flex">
       {
         categorias.map((categoria) => (
           <Link to={`/categorias/${categoria.title}`} key={categoria.id}>
