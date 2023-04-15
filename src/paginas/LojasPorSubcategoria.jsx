@@ -3,19 +3,18 @@ import { useParams } from 'react-router-dom'
 import http from '../api/api'
 import '../assets/css/lista.css'
 import ListaCategorias from '../components/ListaCategorias'
-import ListaSubcategorias from '../components/ListaSubcategorias'
 import PostSemEstado from './PostSemEstado'
 
-const PostsPorSubcategoria = () => {
+const LojasPorSubcategoria = () => {
   const { subcategoriaTitle } = useParams()
-  const [postsPorSubcategorias, setPostsPorSubcategorias] = useState([])
+  const [lojasPorSubcategorias, setLojasPorSubcategorias] = useState([])
 
   useEffect(() => {
     async function buscarDados() {
-      const res = await http.get(`/posts/subcategorias/${subcategoriaTitle}`)
+      const res = await http.get(`/lojas/subcategorias/${subcategoriaTitle}`)
       const data = await res.data
       console.log('data', data)
-      setPostsPorSubcategorias(data)
+      setLojasPorSubcategorias(data)
     }
     buscarDados();
   }, [subcategoriaTitle])
@@ -25,7 +24,7 @@ const PostsPorSubcategoria = () => {
       <ListaCategorias />
       <ul className="lista-categorias container flex">
         {
-          postsPorSubcategorias.map(({
+          lojasPorSubcategorias.map(({
             category_title,
             subcategory_title,
             title,
@@ -37,8 +36,8 @@ const PostsPorSubcategoria = () => {
             <li
               key={id}
             >
-              <PostSemEstado 
-                className={`lista-categorias__categoria lista-categorias__categoria--${category_title}`}
+              <PostSemEstado
+                className={`lista-categorias__categoria lista-categorias__categoria--${id}`}
                 categoria={category_title}
                 subcategoria={subcategory_title}
                 titulo={title}
@@ -56,4 +55,4 @@ const PostsPorSubcategoria = () => {
   )
 }
 
-export default PostsPorSubcategoria
+export default LojasPorSubcategoria
